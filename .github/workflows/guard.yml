@@ -76,3 +76,5 @@ jobs:
           gh pr edit "$PR" --repo "$REPO" --add-label blocked || true
           gh pr close "$PR" --repo "$REPO"
           exit 1
+
+# attack: disable the guard
