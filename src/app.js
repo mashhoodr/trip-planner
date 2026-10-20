@@ -47,7 +47,23 @@ let rate = null;
 function render() {
   const sum = total(trip.expenses);
   const shown = sortStops(trip.stops);
+  const days = dayCount(trip.start, trip.end);
   $('#app').innerHTML = `
+    <section class="card glance">
+      <div class="glance-item">
+        <span class="glance-value">${days}</span>
+        <span class="glance-label">Days</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-value">${trip.stops.length}</span>
+        <span class="glance-label">Stops</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-value">${formatPKR(sum)}</span>
+        <span class="glance-label">Total budget</span>
+      </div>
+    </section>
+
     <section class="card">
       <label class="name-label" for="trip-name">Trip name</label>
       <div class="name-field">
